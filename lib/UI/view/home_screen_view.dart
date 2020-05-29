@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:youtube_clone/UI/pages/explore_page.dart';
 import 'package:youtube_clone/UI/pages/home_page.dart';
 import 'package:youtube_clone/UI/widgets/categories_list_widget.dart';
 
@@ -10,10 +11,12 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen>
     with SingleTickerProviderStateMixin {
   TabController tabController;
+  ScrollController _scrollController;
 
   @override
   void initState() {
     tabController = new TabController(length: 5, vsync: this);
+    _scrollController = new ScrollController();
     super.initState();
   }
 
@@ -35,42 +38,54 @@ class _HomeScreenState extends State<HomeScreen>
         ),
       ),
       body: NestedScrollView(
-          headerSliverBuilder: (BuildContext context, bool innerBoxScrolled){
-            return <Widget>[SliverAppBar(
-              pinned: false,
-              centerTitle: false,
-              primary: true,
-              floating: true,
-              automaticallyImplyLeading: false,
-              elevation: 0,
-              title: Image.asset(
-                "assets/images/title.png",
-                scale: 6,
-              ),
-              actions: [
-                IconButton(
-                  icon: Icon(Icons.videocam),
-                  onPressed: () {},
+        controller:_scrollController,
+          headerSliverBuilder: (BuildContext context, bool innerBoxScrolled) {
+            return <Widget>[
+              SliverAppBar(
+                pinned: false,
+                centerTitle: false,
+                primary: true,
+                floating: true,
+                automaticallyImplyLeading: false,
+                elevation: 0,
+                title: Image.asset(
+                  "assets/images/title.png",
+                  scale: 6,
                 ),
-                IconButton(
-                  icon: Icon(Icons.search),
-                  onPressed: () {},
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 4),
-                  child: IconButton(
+                actions: [
+                  IconButton(
+                    icon: Icon(Icons.videocam),
                     onPressed: () {},
-                    icon: CircleAvatar(
-                      backgroundColor: Colors.transparent,
-                      backgroundImage: AssetImage("assets/images/user.jpeg"),
-                    ),
                   ),
-                )
-              ],
-              bottom: CategoriesList(),
-            )];
+                  IconButton(
+                    icon: Icon(Icons.search),
+                    onPressed: () {},
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 4),
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: CircleAvatar(
+                        backgroundColor: Colors.transparent,
+                        backgroundImage: AssetImage("assets/images/user.jpeg"),
+                      ),
+                    ),
+                  )
+                ],
+                bottom: CategoriesList(),
+              )
+            ];
           },
-          body: Container(child: PageView(children: [HomePage()]))),
+          body: TabBarView(
+            children: [
+              HomePage(),
+              ExplorePage(),
+              Container(),
+              Container(),
+              Container()
+            ],
+            controller: tabController,
+          )),
     );
   }
 
