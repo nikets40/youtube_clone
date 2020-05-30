@@ -22,7 +22,7 @@ class ExplorePage extends StatelessWidget {
               padding: const EdgeInsets.all(10.0),
               child: Text(
                 "Trending",
-                style: GoogleFonts.roboto(textStyle: TextStyle(color: Colors.white,fontWeight: FontWeight.w400,fontSize: 24)),
+                style: GoogleFonts.roboto(textStyle: Theme.of(context).textTheme.headline1),
               ),
             ),
 

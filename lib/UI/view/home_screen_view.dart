@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_clone/UI/pages/explore_page.dart';
 import 'package:youtube_clone/UI/pages/home_page.dart';
+import 'package:youtube_clone/UI/pages/inbox_page.dart';
+import 'package:youtube_clone/UI/pages/library_page.dart';
+import 'package:youtube_clone/UI/pages/subscription_page.dart';
 import 'package:youtube_clone/UI/widgets/categories_list_widget.dart';
+import 'package:youtube_clone/UI/widgets/subscriptions_header.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -46,10 +50,9 @@ class _HomeScreenState extends State<HomeScreen>
               SliverAppBar(
                 pinned: false,
                 centerTitle: false,
-                primary: true,
+//                primary: true,
                 floating: true,
                 automaticallyImplyLeading: false,
-                elevation: 10,
                 title: Image.asset(
                   "assets/images/title.png",
                   scale: 6,
@@ -74,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen>
                     ),
                   )
                 ],
-                bottom: tabController.index == 0?CategoriesList():null,
+                bottom: getHeader(),
               )
             ];
           },
@@ -82,13 +85,21 @@ class _HomeScreenState extends State<HomeScreen>
             children: [
               HomePage(),
               ExplorePage(),
-              Container(),
-              Container(),
-              Container()
+              SubscriptionPage(),
+              InboxPage(),
+              LibraryPage()
             ],
             controller: tabController,
           )),
     );
+  }
+
+  getHeader(){
+    switch (tabController.index){
+      case 0 : return CategoriesList();
+      case 2 : return SubscriptionsHeader();
+      default: return null;
+    }
   }
 
   bottomTabs() {

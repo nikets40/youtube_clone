@@ -22,6 +22,7 @@ class VideoPreview extends StatelessWidget {
                   height: screenHeight(context) * 0.25,
                   width: screenWidth(context),
                   decoration: BoxDecoration(
+                    color: Colors.white24,
                     image: DecorationImage(
                         image: NetworkImage(
                             "https://picsum.photos/id/${1000 + index}/600/400"),
@@ -33,7 +34,7 @@ class VideoPreview extends StatelessWidget {
                 child: Container(
                   padding: EdgeInsets.all(2.5),
                   color: Colors.black.withOpacity(0.7),
-                  child: Text("03:24",style: GoogleFonts.roboto(textStyle: TextStyle(color: Colors.white,fontWeight: FontWeight.w500,fontSize: 15)),),
+                  child: Text("03:24",style: GoogleFonts.roboto(textStyle: TextStyle(color: Colors.white,fontWeight: FontWeight.w500,fontSize: 14)),),
                 ),
               )
             ],
@@ -46,7 +47,8 @@ class VideoPreview extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CircleAvatar(
-                  radius: 25,
+                  radius: 20,
+                  backgroundColor: Colors.white24,
                   backgroundImage: NetworkImage(
                       "https://picsum.photos/id/${1000 + index}/600/400"),
                 ),
@@ -59,13 +61,13 @@ class VideoPreview extends StatelessWidget {
                         Text(randomTitle,
                             style: GoogleFonts.roboto(
                                 textStyle: TextStyle(
-                                    fontSize: 18,
+                                    fontSize: 16,
                                     color: Colors.white,
                                     fontWeight: FontWeight.w500))
 //                            TextStyle(color: Colors.white,fontWeight: FontWeight.w600,fontSize: 20),
                         ),
                         SizedBox(
-                          height: 8,
+                          height: 5,
                         ),
                         Row(
                           children: [
@@ -98,7 +100,7 @@ class VideoPreview extends StatelessWidget {
                       ],
                     )),
                 InkWell(
-                  child: Icon(Icons.more_vert),
+                  child: Icon(Icons.more_vert,color: Colors.white70,),
                   onTap: () {},
                 ),
               ],
