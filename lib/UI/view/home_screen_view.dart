@@ -16,6 +16,8 @@ class _HomeScreenState extends State<HomeScreen>
   @override
   void initState() {
     tabController = new TabController(length: 5, vsync: this);
+    tabController.addListener(() {setState(() {
+    });});
     _scrollController = new ScrollController();
     super.initState();
   }
@@ -47,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen>
                 primary: true,
                 floating: true,
                 automaticallyImplyLeading: false,
-                elevation: 0,
+                elevation: 10,
                 title: Image.asset(
                   "assets/images/title.png",
                   scale: 6,
@@ -72,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen>
                     ),
                   )
                 ],
-                bottom: CategoriesList(),
+                bottom: tabController.index == 0?CategoriesList():null,
               )
             ];
           },
