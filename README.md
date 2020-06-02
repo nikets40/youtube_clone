@@ -1,16 +1,9 @@
 # youtube_clone
 
-A new Flutter project.
+A simple UI Clone of the most popular video search engine Youtube.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Youtube Clone](https://user-images.githubusercontent.com/40358714/83504247-ea140980-a4e1-11ea-98c6-65c187956483.png)
+![Simulator Screen Shot - iPhone 11 Pro Max - 2020-06-02 at 14 53 14](https://user-images.githubusercontent.com/40358714/83504074-aae5b880-a4e1-11ea-94c6-2e9e04272431.png)
+![Simulator Screen Shot - iPhone 11 Pro Max - 2020-06-02 at 14 53 17](https://user-images.githubusercontent.com/40358714/83504140-c5b82d00-a4e1-11ea-9ce5-28d7f521383a.png)
+![Simulator Screen Shot - iPhone 11 Pro Max - 2020-06-02 at 14 53 22](https://user-images.githubusercontent.com/40358714/83504356-09129b80-a4e2-11ea-8128-536f1efa052d.png)
+![Simulator Screen Shot - iPhone 11 Pro Max - 2020-06-02 at 14 53 27](https://user-images.githubusercontent.com/40358714/83504368-0c0d8c00-a4e2-11ea-8557-c21a6279b884.png)
